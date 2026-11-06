@@ -1,0 +1,66 @@
+{
+  "nome": "Andrei de Aquino Fonseca Atamantchuk Doronin",
+  "resumo_pt": "Bacharel em matemática pura pela UEM com bolsa, graduado em licenciatura em matemática pela UniBF e mestre em matemática pura pelo ICMC-USP com bolsa. Recebeu honraria de bronze na competição internacional de matemática intitulada International Youth Math Challenge. Atuou como professor de Ensino Médio da GERAR e como elaborador de questões para concursos públicos da Ápice Consultoria.   Atualmente é estudante de doutorado pela UnB. Áreas de interesse: álgebra e análise.",
+  "resumo_en": "Bachelor's degree in pure mathematics from UEM with a scholarship, Bachelor's degree in mathematics education from UniBF, and Master's degree in pure mathematics from ICMC-USP with a scholarship. Writer of exam questions. Worked as a high school teacher at GERAR. Areas of interest: algebra and analysis.",
+  "formacao": [
+    {
+      "tipo": "GRADUACAO",
+      "curso": "Abi - Matemática",
+      "instituicao": "Universidade Estadual de Maringá",
+      "inicio": "2019",
+      "conclusao": "2022",
+      "status": "CONCLUIDO",
+      "titulo": ""
+    },
+    {
+      "tipo": "GRADUACAO",
+      "curso": "Formação pedagógica em matemática",
+      "instituicao": "Centro Universitário UniBF",
+      "inicio": "2025",
+      "conclusao": "2025",
+      "status": "CONCLUIDO",
+      "titulo": ""
+    },
+    {
+      "tipo": "MESTRADO",
+      "curso": "Matemática",
+      "instituicao": "Universidade de São Paulo",
+      "inicio": "2023",
+      "conclusao": "2025",
+      "status": "CONCLUIDO",
+      "titulo": "The Riemann Zeta Function and Eisenstein series"
+    },
+    {
+      "tipo": "DOUTORADO",
+      "curso": "Matemática",
+      "instituicao": "Universidade de Brasília",
+      "inicio": "2026",
+      "conclusao": "",
+      "status": "EM_ANDAMENTO",
+      "titulo": ""
+    }
+  ],
+  "artigos": [
+    {
+      "titulo": "A different proof of a proposition about weakly modular functions",
+      "ano": "2026",
+      "periodico": "REVISTA SERGIPANA DE MATEMÁTICA E EDUCAÇÃO MATEMÁTICA",
+      "doi": "10.34179/revisem.v11i1.22896",
+      "url": "https://periodicos.ufs.br/ReviSe/article/view/22896"
+    },
+    {
+      "titulo": "Sobre uma Demonstração da Identidade de Tepper",
+      "ano": "2024",
+      "periodico": "MATEMÁTICA E ESTATÍSTICA EM FOCO",
+      "doi": "",
+      "url": "https://seer.ufu.br/index.php/matematicaeestatisticaemfoco/article/view/75786"
+    },
+    {
+      "titulo": "Uma introdução à variação de uma função",
+      "ano": "2023",
+      "periodico": "REVISTA ELETRÔNICA PAULISTA DE MATEMÁTICA",
+      "doi": "10.21167/cqdv23n1ic2023335344",
+      "url": "https://sistemas.fc.unesp.br/ojs/index.php/revistacqd/article/view/378/385"
+    }
+  ]
+}
