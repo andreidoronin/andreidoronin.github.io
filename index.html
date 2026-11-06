@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andrei Doronin | Matemática</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #080808;
+  color: #eeeeee;
+  font-family: Georgia, serif;
+  line-height: 1.8;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+  padding: 35px 25px;
+}
+
+header {
+  border-bottom: 1px solid #333;
+  padding-bottom: 25px;
+}
+
+h1 {
+  font-size: 38px;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  color: #aaa;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+a {
+  color: #8ab4f8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+nav a {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+button {
+  background: transparent;
+  color: white;
+  border: 1px solid #777;
+  padding: 7px 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+section {
+  padding: 25px 0;
+  border-bottom: 1px solid #292929;
+}
+
+h2 {
+  font-size: 23px;
+}
+
+.muted {
+  color: #aaa;
+}
+
+footer {
+  color: #888;
+  font-size: 13px;
+  padding: 30px 0;
+}
+
+@media(max-width:600px) {
+  h1 { font-size: 30px; }
+  nav { gap: 12px; }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+<h1>Andrei Doronin</h1>
+
+<div class="subtitle"
+data-pt="Matemático | Doutorando em Matemática"
+data-en="Mathematician | PhD Student in Mathematics">
+Matemático | Doutorando em Matemática
+</div>
+
+<div class="muted">
+Universidade de Brasília (UnB) · Brasil
+</div>
+
+<nav>
+<a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a>
+<a href="#formacao" data-pt="Formação" data-en="Education">Formação</a>
+<a href="#pesquisa" data-pt="Pesquisa" data-en="Research">Pesquisa</a>
+<a href="#publicacoes" data-pt="Publicações" data-en="Publications">Publicações</a>
+<a href="#ensino" data-pt="Ensino" data-en="Teaching">Ensino</a>
+<a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
+</nav>
+
+<button onclick="changeLanguage()" id="language">English</button>
+</header>
+
+<section id="sobre">
+<h2 data-pt="Sobre mim" data-en="About me">Sobre mim</h2>
+
+<p
+data-pt="Sou matemático e doutorando em Matemática Pura na Universidade de Brasília (UnB). Tenho formação em Matemática pela Universidade Estadual de Maringá (UEM) e mestrado em Matemática pela Universidade de São Paulo (USP)."
+data-en="I am a mathematician and a PhD student in Pure Mathematics at the University of Brasília (UnB), Brazil. I hold a Bachelor's degree in Mathematics from the State University of Maringá (UEM) and a Master's degree in Mathematics from the University of São Paulo (USP).">
+Sou matemático e doutorando em Matemática Pura na Universidade de Brasília (UnB). Tenho formação em Matemática pela Universidade Estadual de Maringá (UEM) e mestrado em Matemática pela Universidade de São Paulo (USP).
+</p>
+</section>
+
+<section id="formacao">
+<h2 data-pt="Formação acadêmica" data-en="Education">Formação acadêmica</h2>
+
+<p>
+<strong data-pt="Doutorado em Matemática"
+data-en="PhD in Mathematics">Doutorado em Matemática</strong><br>
+<span class="muted">Universidade de Brasília (UnB) — Em andamento</span>
+</p>
+
+<p>
+<strong data-pt="Mestrado em Matemática Pura"
+data-en="Master's Degree in Pure Mathematics">Mestrado em Matemática Pura</strong><br>
+<span class="muted">Universidade de São Paulo (USP)</span>
+</p>
+
+<p>
+<strong data-pt="Bacharelado em Matemática Pura"
+data-en="Bachelor's Degree in Pure Mathematics">Bacharelado em Matemática Pura</strong><br>
+<span class="muted">Universidade Estadual de Maringá (UEM)</span>
+</p>
+
+<p>
+<strong data-pt="Licenciatura em Matemática"
+data-en="Teaching Degree in Mathematics">Licenciatura em Matemática</strong><br>
+<span class="muted">UniBF</span>
+</p>
+</section>
+
+<section id="pesquisa">
+<h2 data-pt="Interesses de pesquisa" data-en="Research Interests">Interesses de pesquisa</h2>
+
+<ul>
+<li data-pt="Teoria dos Números" data-en="Number Theory">Teoria dos Números</li>
+<li data-pt="Aproximação Diofantina" data-en="Diophantine Approximation">Aproximação Diofantina</li>
+<li data-pt="Números transcendentes" data-en="Transcendental Numbers">Números transcendentes</li>
+<li data-pt="Números p-ádicos" data-en="p-adic Numbers">Números p-ádicos</li>
+<li data-pt="Funções zeta e séries de Eisenstein" data-en="Zeta Functions and Eisenstein Series">Funções zeta e séries de Eisenstein</li>
+</ul>
+</section>
+
+<section id="publicacoes">
+<h2 data-pt="Publicações científicas" data-en="Scientific Publications">Publicações científicas</h2>
+
+<p data-pt="Nesta seção serão apresentados meus artigos científicos publicados em periódicos acadêmicos."
+data-en="This section presents my scientific articles published in academic journals.">
+Nesta seção serão apresentados meus artigos científicos publicados em periódicos acadêmicos.
+</p>
+
+<p class="muted">[Adicionar referências e links dos artigos]</p>
+</section>
+
+<section id="ensino">
+<h2 data-pt="Ensino" data-en="Teaching">Ensino</h2>
+
+<p data-pt="Atuo também na área de ensino de Matemática, com experiência em aulas particulares, elaboração de questões matemáticas e docência no Ensino Médio."
+data-en="I am also involved in mathematics education, with experience in private tutoring, mathematical problem writing, and high school teaching.">
+Atuo também na área de ensino de Matemática, com experiência em aulas particulares, elaboração de questões matemáticas e docência no Ensino Médio.
+</p>
+</section>
+
+<section id="contato">
+<h2 data-pt="Contato e perfis acadêmicos" data-en="Contact and Academic Profiles">Contato e perfis acadêmicos</h2>
+
+<p>
+<a href="#" target="_blank">Currículo Lattes</a>
+</p>
+<p>
+<a href="#" target="_blank">ORCID</a>
+</p>
+<p>
+<a href="#" target="_blank">Google Scholar</a>
+</p>
+<p>
+<a href="mailto:">E-mail</a>
+</p>
+</section>
+
+<footer>
+© Andrei Doronin
+</footer>
+
+</div>
+
+<script>
+let currentLanguage = "pt";
+
+function changeLanguage() {
+  currentLanguage = currentLanguage === "pt" ? "en" : "pt";
+
+  document.documentElement.lang =
+    currentLanguage === "pt" ? "pt-BR" : "en";
+
+  document.querySelectorAll("[data-pt][data-en]").forEach(element => {
+    element.textContent = element.getAttribute("data-" + currentLanguage);
+  });
+
+  document.getElementById("language").textContent =
+    currentLanguage === "pt" ? "English" : "Português";
+}
+</script>
+
+</body>
+</html>
