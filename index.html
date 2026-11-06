@@ -266,11 +266,23 @@ function atualizarLattes() {
                 ? "Doutorado" : "PhD"
         };
 
-       const curso = item.curso.toUpperCase() === "ABI-MATEMATICA"
+      const cursoOriginal = item.curso || "";
+
+const cursoNormalizado = cursoOriginal
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toUpperCase()
+    .replace(/[^A-Z0-9]/g, "");
+
+const ehAbiMatematica =
+    cursoNormalizado.startsWith("ABI") &&
+    cursoNormalizado.includes("MATEMATICA");
+
+const curso = ehAbiMatematica
     ? (currentLanguage === "pt"
         ? "Bacharelado em Matemática"
         : "Bachelor's Degree in Mathematics")
-    : item.curso;
+    : cursoOriginal;
 
 const titulo = criarElemento(
     "strong",
