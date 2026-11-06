@@ -1,9 +1,10 @@
-
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Andrei Doronin | Matemática</title>
 
 <style>
@@ -28,6 +29,7 @@ body {
 header {
   border-bottom: 1px solid #333;
   padding-bottom: 25px;
+  text-align: center;
 }
 
 h1 {
@@ -44,6 +46,7 @@ nav {
   margin-top: 25px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -90,36 +93,21 @@ footer {
   padding: 30px 0;
 }
 
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: 0% 50%;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
 @media(max-width:600px) {
   h1 { font-size: 30px; }
   nav { gap: 12px; }
 }
-
-  .profile-photo {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    object-position: 00% 50%;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 20px auto;
-}
-
-.research {
-    margin: 15px auto 0 auto;
-    color: #aaaaaa;
-    font-size: 0.95em;
-    line-height: 1.6;
-    max-width: 650px;
-    text-align: center;
-}
-
-  header {
-    text-align: center;
-}
-  
 </style>
-  
 </head>
 
 <body>
@@ -130,7 +118,7 @@ footer {
 <img src="foto_aleat.png"
      alt="Foto de Andrei Doronin"
      class="profile-photo">
-  
+
 <h1>Andrei Doronin</h1>
 
 <div class="subtitle"
@@ -139,7 +127,9 @@ data-en="Mathematician | PhD Student in Mathematics">
 Matemático | Doutorando em Matemática
 </div>
 
-<div class="muted">
+<div class="muted"
+data-pt="Universidade de Brasília (UnB) · Brasil"
+data-en="University of Brasília (UnB) · Brazil">
 Universidade de Brasília (UnB) · Brasil
 </div>
 
@@ -153,6 +143,7 @@ Universidade de Brasília (UnB) · Brasil
 </nav>
 
 <button onclick="changeLanguage()" id="language">English</button>
+
 </header>
 
 <section id="sobre">
@@ -161,6 +152,7 @@ Universidade de Brasília (UnB) · Brasil
 </section>
 
 <section id="formacao">
+
 <h2 data-pt="Formação acadêmica" data-en="Education">
 Formação acadêmica
 </h2>
@@ -168,10 +160,14 @@ Formação acadêmica
 <div id="formacao-lattes">
 Carregando formação acadêmica...
 </div>
+
 </section>
 
 <section id="pesquisa">
-<h2 data-pt="Interesses de pesquisa" data-en="Research Interests">Interesses de pesquisa</h2>
+
+<h2 data-pt="Interesses de pesquisa" data-en="Research Interests">
+Interesses de pesquisa
+</h2>
 
 <ul>
 <li data-pt="Teoria dos Números" data-en="Number Theory">Teoria dos Números</li>
@@ -180,9 +176,11 @@ Carregando formação acadêmica...
 <li data-pt="Números p-ádicos" data-en="p-adic Numbers">Números p-ádicos</li>
 <li data-pt="Funções zeta e séries de Eisenstein" data-en="Zeta Functions and Eisenstein Series">Funções zeta e séries de Eisenstein</li>
 </ul>
+
 </section>
 
 <section id="publicacoes">
+
 <h2 data-pt="Publicações científicas"
 data-en="Scientific Publications">
 Publicações científicas
@@ -191,32 +189,53 @@ Publicações científicas
 <div id="publicacoes-lattes">
 Carregando publicações...
 </div>
+
 </section>
 
 <section id="ensino">
+
 <h2 data-pt="Ensino" data-en="Teaching">Ensino</h2>
 
-<p data-pt="Atuo também na área de ensino de Matemática, com experiência em aulas particulares, elaboração de questões matemáticas e docência no Ensino Médio."
+<p
+data-pt="Atuo também na área de ensino de Matemática, com experiência em aulas particulares, elaboração de questões matemáticas e docência no Ensino Médio."
 data-en="I am also involved in mathematics education, with experience in private tutoring, mathematical problem writing, and high school teaching.">
+
 Atuo também na área de ensino de Matemática, com experiência em aulas particulares, elaboração de questões matemáticas e docência no Ensino Médio.
+
 </p>
 </section>
 
 <section id="contato">
-<h2 data-pt="Contato e perfis acadêmicos" data-en="Contact and Academic Profiles">Contato e perfis acadêmicos</h2>
+
+<h2 data-pt="Contato e perfis acadêmicos"
+data-en="Contact and Academic Profiles">
+Contato e perfis acadêmicos
+</h2>
 
 <p>
-<a href="#" target="_blank">Currículo Lattes</a>
+<a href="#" target="_blank"
+data-pt="Currículo Lattes"
+data-en="Lattes CV">Currículo Lattes</a>
 </p>
+
 <p>
-<a href="#" target="_blank">ORCID</a>
+<a href="#" target="_blank"
+data-pt="ORCID"
+data-en="ORCID">ORCID</a>
 </p>
+
 <p>
-<a href="#" target="_blank">Google Scholar</a>
+<a href="#" target="_blank"
+data-pt="Google Scholar"
+data-en="Google Scholar">Google Scholar</a>
 </p>
+
 <p>
-<a href="mailto:">E-mail</a>
+<a href="mailto:"
+data-pt="E-mail"
+data-en="Email">E-mail</a>
 </p>
+
 </section>
 
 <footer>
@@ -226,12 +245,25 @@ Atuo também na área de ensino de Matemática, com experiência em aulas partic
 </div>
 
 <script>
+
 let currentLanguage = "pt";
 let dadosLattes = null;
 
+
+// Normalizar textos para facilitar a comparação
+function normalizar(texto) {
+    return (texto || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toUpperCase()
+        .replace(/[^A-Z0-9]/g, "");
+}
+
+
+// Criar elementos HTML
 function criarElemento(tag, texto, classe = "") {
     const elemento = document.createElement(tag);
-    elemento.textContent = texto;
+    elemento.textContent = texto || "";
 
     if (classe) {
         elemento.className = classe;
@@ -240,97 +272,184 @@ function criarElemento(tag, texto, classe = "") {
     return elemento;
 }
 
-function atualizarLattes() {
-    if (!dadosLattes) return;
 
-    // Atualizar resumo
-    const resumo = document.getElementById("resumo-lattes");
+// Traduzir tipos de formação
+function traduzirTipo(tipo) {
 
-    resumo.textContent = currentLanguage === "pt"
-        ? dadosLattes.resumo_pt
-        : dadosLattes.resumo_en;
+    const tipos = {
+        GRADUACAO: {
+            pt: "Graduação",
+            en: "Undergraduate degree"
+        },
 
-    // Atualizar formação
+        MESTRADO: {
+            pt: "Mestrado",
+            en: "Master's degree"
+        },
+
+        DOUTORADO: {
+            pt: "Doutorado",
+            en: "PhD"
+        }
+    };
+
+    return tipos[tipo]?.[currentLanguage] || tipo;
+}
+
+
+// Traduzir cursos
+function traduzirCurso(cursoOriginal) {
+
+    const curso = normalizar(cursoOriginal);
+
+    const traducoes = {
+        MATEMATICA: {
+            pt: "Matemática",
+            en: "Mathematics"
+        },
+
+        FORMACAOPEDAGOGICAEMMATEMATICA: {
+            pt: "Formação pedagógica em Matemática",
+            en: "Mathematics Teacher Education"
+        }
+    };
+
+    // Caso especial: ABI-Matemática
+    if (curso.startsWith("ABI") && curso.includes("MATEMATICA")) {
+        return currentLanguage === "pt"
+            ? "Bacharelado em Matemática"
+            : "Bachelor's Degree in Mathematics";
+    }
+
+    if (traducoes[curso]) {
+        return traducoes[curso][currentLanguage];
+    }
+
+    return cursoOriginal;
+}
+
+
+// Traduzir instituições
+function traduzirInstituicao(nomeOriginal) {
+
+    const nome = normalizar(nomeOriginal);
+
+    const instituicoes = {
+        UNIVERSIDADEESTADUALDEMARINGA: {
+            pt: "Universidade Estadual de Maringá",
+            en: "State University of Maringá"
+        },
+
+        CENTROUNIVERSITARIOUNIBF: {
+            pt: "Centro Universitário UniBF",
+            en: "UniBF University Center"
+        },
+
+        UNIBF: {
+            pt: "Centro Universitário UniBF",
+            en: "UniBF University Center"
+        },
+
+        UNIVERSIDADEDESAOPAULO: {
+            pt: "Universidade de São Paulo",
+            en: "University of São Paulo"
+        },
+
+        UNIVERSIDADEDEBRASILIA: {
+            pt: "Universidade de Brasília",
+            en: "University of Brasília"
+        }
+    };
+
+    if (instituicoes[nome]) {
+        return instituicoes[nome][currentLanguage];
+    }
+
+    return nomeOriginal;
+}
+
+
+// Atualizar formação acadêmica
+function atualizarFormacao() {
+
     const formacao = document.getElementById("formacao-lattes");
     formacao.replaceChildren();
 
     dadosLattes.formacao.forEach(item => {
+
         const bloco = document.createElement("p");
 
-        const tipo = {
-            GRADUACAO: currentLanguage === "pt"
-                ? "Graduação" : "Undergraduate degree",
-            MESTRADO: currentLanguage === "pt"
-                ? "Mestrado" : "Master's degree",
-            DOUTORADO: currentLanguage === "pt"
-                ? "Doutorado" : "PhD"
-        };
+        const curso = traduzirCurso(item.curso);
+        const tipo = traduzirTipo(item.tipo);
+        const instituicao = traduzirInstituicao(item.instituicao);
 
-      const cursoOriginal = item.curso || "";
-
-const cursoNormalizado = cursoOriginal
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toUpperCase()
-    .replace(/[^A-Z0-9]/g, "");
-
-const ehAbiMatematica =
-    cursoNormalizado.startsWith("ABI") &&
-    cursoNormalizado.includes("MATEMATICA");
-
-const curso = ehAbiMatematica
-    ? (currentLanguage === "pt"
-        ? "Bacharelado em Matemática"
-        : "Bachelor's Degree in Mathematics")
-    : cursoOriginal;
-
-const titulo = criarElemento(
-    "strong",
-    `${tipo[item.tipo] || item.tipo} — ${curso}`
-);
-
-        const instituicao = document.createElement("span");
-        instituicao.className = "muted";
+        const titulo = criarElemento(
+            "strong",
+            `${tipo} — ${curso}`
+        );
 
         const periodo = item.inicio
             ? item.inicio + (item.conclusao ? "–" + item.conclusao : "–")
             : "";
 
         const status = item.status === "EM_ANDAMENTO"
-            ? (currentLanguage === "pt" ? "Em andamento" : "In progress")
+            ? (currentLanguage === "pt"
+                ? "Em andamento"
+                : "In progress")
             : "";
 
-        instituicao.textContent = [
-            item.instituicao,
+        const detalhes = [
+            instituicao,
             periodo,
             status
         ].filter(Boolean).join(" · ");
 
+        const linhaDetalhes = criarElemento(
+            "span",
+            detalhes,
+            "muted"
+        );
+
         bloco.appendChild(titulo);
         bloco.appendChild(document.createElement("br"));
-        bloco.appendChild(instituicao);
+        bloco.appendChild(linhaDetalhes);
 
         formacao.appendChild(bloco);
-    });
 
-    // Atualizar publicações
+    });
+}
+
+
+// Atualizar publicações
+function atualizarPublicacoes() {
+
     const publicacoes = document.getElementById("publicacoes-lattes");
     publicacoes.replaceChildren();
 
     dadosLattes.artigos.forEach(item => {
+
         const bloco = document.createElement("p");
 
-        bloco.appendChild(criarElemento("strong", item.titulo));
+        bloco.appendChild(
+            criarElemento("strong", item.titulo)
+        );
+
         bloco.appendChild(document.createElement("br"));
 
         bloco.appendChild(
-            criarElemento("span", item.periodico + " · " + item.ano, "muted")
+            criarElemento(
+                "span",
+                [item.periodico, item.ano].filter(Boolean).join(" · "),
+                "muted"
+            )
         );
 
         if (item.doi) {
+
             bloco.appendChild(document.createElement("br"));
 
             const doi = document.createElement("a");
+
             doi.href = "https://doi.org/" + item.doi;
             doi.textContent = "DOI: " + item.doi;
             doi.target = "_blank";
@@ -340,13 +459,17 @@ const titulo = criarElemento(
         }
 
         if (item.url) {
+
             bloco.appendChild(document.createElement("br"));
 
             const link = document.createElement("a");
+
             link.href = item.url;
+
             link.textContent = currentLanguage === "pt"
                 ? "Ver publicação"
                 : "View publication";
+
             link.target = "_blank";
             link.rel = "noopener noreferrer";
 
@@ -354,18 +477,47 @@ const titulo = criarElemento(
         }
 
         publicacoes.appendChild(bloco);
+
     });
 }
 
-function changeLanguage() {
-    currentLanguage = currentLanguage === "pt" ? "en" : "pt";
+
+// Atualizar todos os dados do Lattes
+function atualizarLattes() {
+
+    if (!dadosLattes) return;
+
+    const resumo = document.getElementById("resumo-lattes");
+
+    const textoResumo = currentLanguage === "pt"
+        ? dadosLattes.resumo_pt
+        : dadosLattes.resumo_en;
+
+    resumo.textContent = textoResumo ||
+        (currentLanguage === "pt"
+            ? "Resumo não disponível."
+            : "Summary not available.");
+
+    atualizarFormacao();
+    atualizarPublicacoes();
+}
+
+
+// Aplicar idioma aos textos fixos
+function aplicarIdioma() {
 
     document.documentElement.lang =
         currentLanguage === "pt" ? "pt-BR" : "en";
 
-    document.querySelectorAll("[data-pt][data-en]").forEach(element => {
-        element.textContent =
-            element.getAttribute("data-" + currentLanguage);
+    document.title = currentLanguage === "pt"
+        ? "Andrei Doronin | Matemática"
+        : "Andrei Doronin | Mathematics";
+
+    document.querySelectorAll("[data-pt][data-en]").forEach(elemento => {
+
+        elemento.textContent =
+            elemento.getAttribute("data-" + currentLanguage);
+
     });
 
     document.getElementById("language").textContent =
@@ -374,28 +526,60 @@ function changeLanguage() {
     atualizarLattes();
 }
 
-// Carregar os dados do currículo
+
+// Alternar idioma
+function changeLanguage() {
+
+    currentLanguage = currentLanguage === "pt" ? "en" : "pt";
+
+    aplicarIdioma();
+}
+
+
+// Carregar dados do currículo
 fetch("dados_lattes.json")
+
     .then(response => {
+
         if (!response.ok) {
             throw new Error("Não foi possível carregar o currículo.");
         }
+
         return response.json();
+
     })
+
     .then(dados => {
+
         dadosLattes = dados;
-        atualizarLattes();
+
+        aplicarIdioma();
+
     })
+
     .catch(erro => {
+
         console.error(erro);
 
         document.getElementById("resumo-lattes").textContent =
-            "Não foi possível carregar os dados do currículo.";
+            currentLanguage === "pt"
+                ? "Não foi possível carregar os dados do currículo."
+                : "Could not load curriculum data.";
 
-        document.getElementById("formacao-lattes").textContent = "";
-        document.getElementById("publicacoes-lattes").textContent = "";
+        document.getElementById("formacao-lattes").textContent =
+            currentLanguage === "pt"
+                ? "Formação acadêmica indisponível."
+                : "Education information unavailable.";
+
+        document.getElementById("publicacoes-lattes").textContent =
+            currentLanguage === "pt"
+                ? "Publicações indisponíveis."
+                : "Publications unavailable.";
+
     });
+
 </script>
 
 </body>
 </html>
+```
