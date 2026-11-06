@@ -157,40 +157,17 @@ Universidade de Brasília (UnB) · Brasil
 
 <section id="sobre">
 <h2 data-pt="Sobre mim" data-en="About me">Sobre mim</h2>
-
-<p
-data-pt="Sou matemático e doutorando em Matemática Pura na Universidade de Brasília (UnB). Tenho formação em Matemática pela Universidade Estadual de Maringá (UEM) e mestrado em Matemática pela Universidade de São Paulo (USP)."
-data-en="I am a mathematician and a PhD student in Pure Mathematics at the University of Brasília (UnB), Brazil. I hold a Bachelor's degree in Mathematics from the State University of Maringá (UEM) and a Master's degree in Mathematics from the University of São Paulo (USP).">
-Sou matemático e doutorando em Matemática Pura na Universidade de Brasília (UnB). Tenho formação em Matemática pela Universidade Estadual de Maringá (UEM) e mestrado em Matemática pela Universidade de São Paulo (USP).
-</p>
+<p id="resumo-lattes">Carregando informações do currículo...</p>
 </section>
 
 <section id="formacao">
-<h2 data-pt="Formação acadêmica" data-en="Education">Formação acadêmica</h2>
+<h2 data-pt="Formação acadêmica" data-en="Education">
+Formação acadêmica
+</h2>
 
-<p>
-<strong data-pt="Doutorado em Matemática"
-data-en="PhD in Mathematics">Doutorado em Matemática</strong><br>
-<span class="muted">Universidade de Brasília (UnB) — Em andamento</span>
-</p>
-
-<p>
-<strong data-pt="Mestrado em Matemática Pura"
-data-en="Master's Degree in Pure Mathematics">Mestrado em Matemática Pura</strong><br>
-<span class="muted">Universidade de São Paulo (USP)</span>
-</p>
-
-<p>
-<strong data-pt="Bacharelado em Matemática Pura"
-data-en="Bachelor's Degree in Pure Mathematics">Bacharelado em Matemática Pura</strong><br>
-<span class="muted">Universidade Estadual de Maringá (UEM)</span>
-</p>
-
-<p>
-<strong data-pt="Licenciatura em Matemática"
-data-en="Teaching Degree in Mathematics">Licenciatura em Matemática</strong><br>
-<span class="muted">UniBF</span>
-</p>
+<div id="formacao-lattes">
+Carregando formação acadêmica...
+</div>
 </section>
 
 <section id="pesquisa">
@@ -206,14 +183,14 @@ data-en="Teaching Degree in Mathematics">Licenciatura em Matemática</strong><br
 </section>
 
 <section id="publicacoes">
-<h2 data-pt="Publicações científicas" data-en="Scientific Publications">Publicações científicas</h2>
+<h2 data-pt="Publicações científicas"
+data-en="Scientific Publications">
+Publicações científicas
+</h2>
 
-<p data-pt="Nesta seção serão apresentados meus artigos científicos publicados em periódicos acadêmicos."
-data-en="This section presents my scientific articles published in academic journals.">
-Nesta seção serão apresentados meus artigos científicos publicados em periódicos acadêmicos.
-</p>
-
-<p class="muted">[Adicionar referências e links dos artigos]</p>
+<div id="publicacoes-lattes">
+Carregando publicações...
+</div>
 </section>
 
 <section id="ensino">
@@ -250,20 +227,156 @@ Atuo também na área de ensino de Matemática, com experiência em aulas partic
 
 <script>
 let currentLanguage = "pt";
+let dadosLattes = null;
+
+function criarElemento(tag, texto, classe = "") {
+    const elemento = document.createElement(tag);
+    elemento.textContent = texto;
+
+    if (classe) {
+        elemento.className = classe;
+    }
+
+    return elemento;
+}
+
+function atualizarLattes() {
+    if (!dadosLattes) return;
+
+    // Atualizar resumo
+    const resumo = document.getElementById("resumo-lattes");
+
+    resumo.textContent = currentLanguage === "pt"
+        ? dadosLattes.resumo_pt
+        : dadosLattes.resumo_en;
+
+    // Atualizar formação
+    const formacao = document.getElementById("formacao-lattes");
+    formacao.replaceChildren();
+
+    dadosLattes.formacao.forEach(item => {
+        const bloco = document.createElement("p");
+
+        const tipo = {
+            GRADUACAO: currentLanguage === "pt"
+                ? "Graduação" : "Undergraduate degree",
+            MESTRADO: currentLanguage === "pt"
+                ? "Mestrado" : "Master's degree",
+            DOUTORADO: currentLanguage === "pt"
+                ? "Doutorado" : "PhD"
+        };
+
+        const titulo = criarElemento(
+            "strong",
+            `${tipo[item.tipo] || item.tipo} — ${item.curso}`
+        );
+
+        const instituicao = document.createElement("span");
+        instituicao.className = "muted";
+
+        const periodo = item.inicio
+            ? item.inicio + (item.conclusao ? "–" + item.conclusao : "–")
+            : "";
+
+        const status = item.status === "EM_ANDAMENTO"
+            ? (currentLanguage === "pt" ? "Em andamento" : "In progress")
+            : "";
+
+        instituicao.textContent = [
+            item.instituicao,
+            periodo,
+            status
+        ].filter(Boolean).join(" · ");
+
+        bloco.appendChild(titulo);
+        bloco.appendChild(document.createElement("br"));
+        bloco.appendChild(instituicao);
+
+        formacao.appendChild(bloco);
+    });
+
+    // Atualizar publicações
+    const publicacoes = document.getElementById("publicacoes-lattes");
+    publicacoes.replaceChildren();
+
+    dadosLattes.artigos.forEach(item => {
+        const bloco = document.createElement("p");
+
+        bloco.appendChild(criarElemento("strong", item.titulo));
+        bloco.appendChild(document.createElement("br"));
+
+        bloco.appendChild(
+            criarElemento("span", item.periodico + " · " + item.ano, "muted")
+        );
+
+        if (item.doi) {
+            bloco.appendChild(document.createElement("br"));
+
+            const doi = document.createElement("a");
+            doi.href = "https://doi.org/" + item.doi;
+            doi.textContent = "DOI: " + item.doi;
+            doi.target = "_blank";
+            doi.rel = "noopener noreferrer";
+
+            bloco.appendChild(doi);
+        }
+
+        if (item.url) {
+            bloco.appendChild(document.createElement("br"));
+
+            const link = document.createElement("a");
+            link.href = item.url;
+            link.textContent = currentLanguage === "pt"
+                ? "Ver publicação"
+                : "View publication";
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+
+            bloco.appendChild(link);
+        }
+
+        publicacoes.appendChild(bloco);
+    });
+}
 
 function changeLanguage() {
-  currentLanguage = currentLanguage === "pt" ? "en" : "pt";
+    currentLanguage = currentLanguage === "pt" ? "en" : "pt";
 
-  document.documentElement.lang =
-    currentLanguage === "pt" ? "pt-BR" : "en";
+    document.documentElement.lang =
+        currentLanguage === "pt" ? "pt-BR" : "en";
 
-  document.querySelectorAll("[data-pt][data-en]").forEach(element => {
-    element.textContent = element.getAttribute("data-" + currentLanguage);
-  });
+    document.querySelectorAll("[data-pt][data-en]").forEach(element => {
+        element.textContent =
+            element.getAttribute("data-" + currentLanguage);
+    });
 
-  document.getElementById("language").textContent =
-    currentLanguage === "pt" ? "English" : "Português";
+    document.getElementById("language").textContent =
+        currentLanguage === "pt" ? "English" : "Português";
+
+    atualizarLattes();
 }
+
+// Carregar os dados do currículo
+fetch("dados_lattes.json")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Não foi possível carregar o currículo.");
+        }
+        return response.json();
+    })
+    .then(dados => {
+        dadosLattes = dados;
+        atualizarLattes();
+    })
+    .catch(erro => {
+        console.error(erro);
+
+        document.getElementById("resumo-lattes").textContent =
+            "Não foi possível carregar os dados do currículo.";
+
+        document.getElementById("formacao-lattes").textContent = "";
+        document.getElementById("publicacoes-lattes").textContent = "";
+    });
 </script>
 
 </body>
