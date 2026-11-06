@@ -266,10 +266,16 @@ function atualizarLattes() {
                 ? "Doutorado" : "PhD"
         };
 
-        const titulo = criarElemento(
-            "strong",
-            `${tipo[item.tipo] || item.tipo} — ${item.curso}`
-        );
+       const curso = item.curso.toUpperCase() === "ABI-MATEMATICA"
+    ? (currentLanguage === "pt"
+        ? "Bacharelado em Matemática"
+        : "Bachelor's Degree in Mathematics")
+    : item.curso;
+
+const titulo = criarElemento(
+    "strong",
+    `${tipo[item.tipo] || item.tipo} — ${curso}`
+);
 
         const instituicao = document.createElement("span");
         instituicao.className = "muted";
